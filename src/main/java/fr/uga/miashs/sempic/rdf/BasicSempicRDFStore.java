@@ -5,7 +5,7 @@
  */
 package fr.uga.miashs.sempic.rdf;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
+
 
 import fr.uga.miashs.sempic.model.rdf.SempicOnto;
 import org.apache.jena.query.*;
@@ -35,10 +35,11 @@ public class BasicSempicRDFStore extends RDFStore {
         // create an empty RDF graph
         Model m = ModelFactory.createDefaultModel();
         // create an instance of Photo in Model m
-        Resource pRes = m.createResource(Namespaces.getPhotoUri(photoId), SempicOnto.Photo);
+        Resource pRes = m.createResource(Namespaces.getPhotoUri(photoId), SempicOnto.Picture);
 
         pRes.addLiteral(SempicOnto.albumId, albumId);
         pRes.addLiteral(SempicOnto.ownerId, ownerId);
+
 
         saveModel(m);
 
@@ -74,7 +75,7 @@ public class BasicSempicRDFStore extends RDFStore {
                         + "OPTIONAL {"
                         + "?photo ?p1 ?o1 ."
                         + "?o1 rdfs:label ?o2 ."
-                        + "FILTER (?p1 IN (<" + SempicOnto.depicts + ">,<" + SempicOnto.takenIn + ">,<" + SempicOnto.takenBy + ">)) "
+                        + "FILTER (?p1 IN (<" + SempicOnto.depicts + ">,<" + SempicOnto.location + ">,<" + SempicOnto.hasAuthor + ">,<"  + SempicOnto.wasTakenFor + ">,<" + SempicOnto.title + ">)) "
                         +"}"
                  + "}");
         pss.setIri("photo", pUri);

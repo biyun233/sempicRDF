@@ -22,12 +22,7 @@ public class ExampleRDFStore {
 
         Resource pRes = s.createPhoto(1, 1, 1);
 
-        
-        
         Model m = ModelFactory.createDefaultModel();
-        
-        
-        
         
         Resource newAnimal = m.createResource(SempicOnto.Dog);
         newAnimal.addLiteral(RDFS.label, "Medor");

@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#"
-     xml:base="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+<rdf:RDF xmlns="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#"
+     xml:base="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl"/>
-    
+    <owl:Ontology rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic"/>
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -18,52 +18,66 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
 
 
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts -->
 
-    <owl:ObjectProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo"/>
-        <rdfs:range rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction"/>
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#depicts -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#depicts">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Depiction"/>
         <rdfs:label>depicts</rdfs:label>
     </owl:ObjectProperty>
-    
 
 
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenBy -->
 
-    <owl:ObjectProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo"/>
-        <rdfs:label>taken by</rdfs:label>
-    </owl:ObjectProperty>
-    
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#hasAuthor -->
 
-
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenIn -->
-
-    <owl:ObjectProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenIn">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo"/>
-        <rdfs:range rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Place"/>
-        <rdfs:label>taken in</rdfs:label>
-    </owl:ObjectProperty>
-    
-    
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#owns -->
-
-    <owl:ObjectProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#owns">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person"/>
-        <rdfs:label>possède</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#hasAuthor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#hasPicture"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Author"/>
+        <rdfs:label>hasAuthor</rdfs:label>
     </owl:ObjectProperty>
 
 
-    <!-- 
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#hasPicture -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#hasPicture">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Author"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <rdfs:label>hasPicture</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#isFriendOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#isFriendOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person"/>
+        <rdfs:label>isFriendOf</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#wasTakenFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#wasTakenFor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Event"/>
+        <rdfs:label>wasTakenFor</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -71,30 +85,80 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
 
 
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#albumId -->
 
-    <owl:DatatypeProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#albumId">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:label>in album</rdfs:label>
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#albumId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#albumId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>albumId</rdfs:label>
     </owl:DatatypeProperty>
-    
 
 
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#ownerId -->
 
-    <owl:DatatypeProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#ownerId">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:label>has owner</rdfs:label>
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#date">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>date</rdfs:label>
     </owl:DatatypeProperty>
-    
 
 
-    <!-- 
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#location -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#location">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>location</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>name</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#ownerId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#ownerId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>ownerId</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#petName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#petName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Animal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>petName</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#title">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>title</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -102,59 +166,354 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
 
 
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal -->
 
-    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal">
-        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction"/>
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Animal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Animal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Depiction"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Object"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person"/>
         <rdfs:label>Animal</rdfs:label>
-        <rdfs:label xml:lang="fr">Animal</rdfs:label>
     </owl:Class>
 
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Dog -->
 
-    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Dog">
-        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal"/>
-        <rdfs:label>Dog</rdfs:label>
-        <rdfs:label xml:lang="fr">Chien</rdfs:label>
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Author -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Author">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person"/>
+        <rdfs:label>Author</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction -->
 
-    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction">
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Birthday -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Birthday">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Event"/>
+        <rdfs:label>Birthday</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Cat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Cat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Animal"/>
+        <rdfs:label>Cat</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Depiction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Depiction">
         <rdfs:label>Depiction</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person -->
 
-    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person">
-        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction"/>
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Dog -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Dog">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Animal"/>
+        <rdfs:label>Dog</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Event">
+        <rdfs:label>Event</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Farewall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Farewall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Party"/>
+        <rdfs:label>Farewall</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Festival -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Festival">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Event"/>
+        <rdfs:label>Festival</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#House_warming -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#House_warming">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Party"/>
+        <rdfs:label>House_warming</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Monument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Monument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Object"/>
+        <rdfs:label>Monument</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Object -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Object">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Depiction"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person"/>
+        <rdfs:label>Object</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Party -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Party">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Event"/>
+        <rdfs:label>Party</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Depiction"/>
         <rdfs:label>Person</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo -->
 
-    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo">
-        <rdfs:label>Photo</rdfs:label>
-    </owl:Class>
-    
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#PersonInPicture -->
 
-
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Place -->
-
-    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Place">
-        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction"/>
-        <rdfs:label>Place</rdfs:label>
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#PersonInPicture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person"/>
+        <rdfs:label>PersonInPicture</rdfs:label>
     </owl:Class>
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture">
+        <rdfs:label>Picture</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#View -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#View">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Object"/>
+        <rdfs:label>View</rdfs:label>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#A_beach -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#A_beach">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#View"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Biyun -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Biyun">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Biyun</name>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Cat_Mew -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Cat_Mew">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <hasAuthor rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo"/>
+        <wasTakenFor rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#house_warming_for_Manuel"/>
+        <albumId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</albumId>
+        <date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-09-02</date>
+        <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grenoble</location>
+        <ownerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ownerId>
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cat Mew</title>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person"/>
+        <hasPicture rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Cat_Mew"/>
+        <hasPicture rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo_selfie"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diallo</name>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo_Seul -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo_Seul">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <depicts rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo"/>
+        <hasAuthor rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Jérôme"/>
+        <albumId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</albumId>
+        <date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-12-15</date>
+        <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grenoble</location>
+        <ownerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ownerId>
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diallo Seul</title>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo_selfie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo_selfie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <depicts rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo"/>
+        <hasAuthor rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo"/>
+        <albumId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</albumId>
+        <date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-12-15</date>
+        <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grenoble</location>
+        <ownerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ownerId>
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diallo selfie</title>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Eiffel_Tower -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Eiffel_Tower">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Monument"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Jérôme -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Jérôme">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person"/>
+        <hasPicture rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo_Seul"/>
+        <hasPicture rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Manuel_Seul"/>
+        <hasPicture rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Manuel_with_Jérôme"/>
+        <hasPicture rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#house_warming"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jérôme</name>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Manuel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Manuel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Person"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manuel</name>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Manuel_Seul -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Manuel_Seul">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <depicts rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Manuel"/>
+        <hasAuthor rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Jérôme"/>
+        <albumId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</albumId>
+        <date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-10-02</date>
+        <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paris</location>
+        <ownerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ownerId>
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manuel Seul</title>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Manuel_with_Jérôme -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Manuel_with_Jérôme">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <depicts rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Jérôme"/>
+        <depicts rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Manuel"/>
+        <hasAuthor rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Jérôme"/>
+        <wasTakenFor rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#house_warming_for_Manuel"/>
+        <albumId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</albumId>
+        <date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-09-02</date>
+        <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grenoble</location>
+        <ownerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ownerId>
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manuel with Jérôme</title>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Mew -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Mew">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Cat"/>
+        <petName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mew</petName>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Mountain_Alpes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Mountain_Alpes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#View"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#house_warming -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#house_warming">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Picture"/>
+        <depicts rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Biyun"/>
+        <depicts rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Diallo"/>
+        <depicts rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Jérôme"/>
+        <depicts rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Manuel"/>
+        <hasAuthor rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#Jérôme"/>
+        <wasTakenFor rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#house_warming_for_Manuel"/>
+        <albumId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</albumId>
+        <date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-09-02</date>
+        <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grenoble</location>
+        <ownerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ownerId>
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">house warming parties</title>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#house_warming_for_Manuel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#house_warming_for_Manuel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/biyun/ontologies/2021/0/sempic#House_warming"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
